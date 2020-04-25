@@ -1,0 +1,23 @@
+<div class="sort-container-desktop">
+  <div>Sort By</div>
+  <div [ngClass]="{'active': sortedOn == 'hl'}" (click)="sortOn('hl')">Price -- High Low</div>
+  <div [ngClass]="{'active': sortedOn == 'lh'}" (click)="sortOn('lh')">Price -- Low High</div>
+  <div [ngClass]="{'active': sortedOn == 'discount'}" (click)="sortOn('discount')">Discount</div>
+</div>
+
+<div class="sort-container-mobile">
+  <div (click)=showSortOnPopup()>Sort</div>
+</div>
+
+<div class="sort-popup-container" [ngClass]="{'active': showPopup}">
+  <div class="sort-popup">
+    <div style="font-weight: bold; font-size: 16px; border-bottom: solid 1px gray;">Sort Options</div>
+    <div [ngClass]="{'active': sortedOn == 'hl'}" (click)="selectSortOn('hl')">Price -- High Low</div>
+    <div [ngClass]="{'active': sortedOn == 'lh'}" (click)="selectSortOn('lh')">Price -- Low High</div>
+    <div [ngClass]="{'active': sortedOn == 'discount'}" (click)="selectSortOn('discount')" style="border-bottom: solid 1px gray;">Discount</div>
+    <div style="display: flex; margin-bottom: 0; padding-bottom: 0;">
+      <div style="flex: 1; text-align: center; border-right: solid 1px gray;" (click)="cancelPopup()">Cancel</div>
+      <div (click)="sortFromPopup()" style="flex: 1; text-align: center;">Apply</div>
+    </div>
+  </div>
+</div>

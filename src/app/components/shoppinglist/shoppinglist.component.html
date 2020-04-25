@@ -1,0 +1,35 @@
+<div class="container">
+  <nav class="filter-container">
+    <app-filter (selectedPriceRange)="filterOnPrice($event)"></app-filter>
+  </nav>
+  <div class="sortNFilter-mobile">
+    <app-filter (selectedPriceRange)="filterOnPrice($event)"></app-filter>
+    <app-sort (selectedSortOn)="sortItemList($event)"></app-sort>
+  </div>
+  <main>
+    <div class="sort-container" style="margin-top: 20px; margin-bottom: 20px;">
+      <app-sort (selectedSortOn)="sortItemList($event)"></app-sort>
+    </div>
+    <div class="products">
+      <div *ngFor="let product of products" class="product-card">
+        <div style="flex: 1; margin-bottom: 10px;">
+          <img src="assets/{{product.photo}}" />
+        </div>
+        <label>{{product.name}}</label>
+        <div class="price-block">
+          <div>
+            <label>{{product.mrp - (product.mrp * (product.discount/100))}}</label>
+            <label style="text-decoration: line-through; color: gray; margin-left: 5px;">{{product.mrp}}</label>
+          </div>
+          <div>
+            <label style="color:green;">{{product.discount}}% off</label>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+          <button class="addToCartBtn" (click)="addToCart(product)">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+

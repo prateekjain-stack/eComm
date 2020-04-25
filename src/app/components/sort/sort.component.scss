@@ -1,0 +1,72 @@
+.sort-container-desktop{
+    display: flex; 
+    font-weight: bold;
+}
+
+.sort-container-desktop div{
+    margin-right: 30px;
+}
+
+.sort-container-desktop div:not(:first-child){
+    cursor: pointer;
+}
+
+.sort-container-desktop .active{
+    color: blue;
+    text-decoration: underline;
+}
+
+.sort-container-mobile{
+    display: none;
+}
+
+.sort-popup-container{
+    display: none;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.sort-popup{
+    background: white;   
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+}
+
+.sort-popup > div{
+    padding: 0 20px 20px 20px;
+    margin-bottom: 20px;
+}
+
+.sort-popup-container.active{
+    display: flex;
+}
+
+.sort-popup-container div{
+    cursor: pointer;
+}
+
+.sort-popup-container .active{
+    color: blue;
+    text-decoration: underline;
+}
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    .sort-container-desktop{
+        display: none;
+    }
+
+    .sort-container-mobile{
+        display: block;
+    }
+}
+

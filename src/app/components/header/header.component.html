@@ -1,0 +1,10 @@
+<div class="header">
+  <div style="flex: 1;"></div>
+  <div>
+    <img src="../../../assets/search.png" />
+  </div>
+  <div (click)="goToCart()" style="position: relative;">
+    <img src="../../../assets/shopping-cart.png" />
+    <div class="cart-item-number" *ngIf="totalItems > 0">{{totalItems}}</div>
+  </div>
+</div>

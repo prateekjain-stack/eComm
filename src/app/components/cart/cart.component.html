@@ -1,0 +1,42 @@
+<div class="cart-container">
+  <div style="flex: 1;">
+    <div *ngFor="let item of shoppingCartItems" class="item-block">
+      <div style="width: 150px; height: 180px;"><img style="width: 100%;" src="assets/{{item.product.photo}}"/></div>
+      <div class="item-detail">
+        <div>{{item.product.name}}</div>
+        <div>
+          <label>{{item.product.currentPrice}}</label>
+          <label style="text-decoration: line-through; color: gray; margin-left: 5px;">{{item.product.mrp}}</label>
+          <label style="color:green;">{{item.product.discount}}% off</label>
+        </div>
+        <div style="display: flex; justify-content: space-between; width: 100px;">
+          <div class="cart-icon" (click)="addItem(item.product)"><img style="width: 100%;" src="assets/plus.png" /></div>
+          <div class="quantity">{{item.quantity}}</div>
+          <div class="cart-icon" (click)="subtractItem(item.product)"><img style="width: 100%;" src="assets/minus.png" /></div>
+        </div>
+        <div><label style="font-weight: bold;" (click)="removeItem(item.product)">REMOVE</label></div>
+      </div>
+    </div>
+  </div>
+  <div class="totalPriceBlock">
+    <div class="price-cnt">
+      <div style="border-bottom: solid 1px gray; padding-bottom: 20px;">PRICE DETAILS</div>
+      <div style="border-bottom: solid 1px gray; padding-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between;">
+          <div style="flex:1;">Total Item Price</div>
+          <div>:</div>
+          <div>{{totalItemPrice}}</div>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <div style="flex:1;">Discount</div>
+          <div>:</div>
+          <div>{{totalDiscount}}</div>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between;">
+        <div>Total Payable</div>
+        <div>{{totalPayable}}</div>
+      </div>
+    </div>
+  </div>
+</div>

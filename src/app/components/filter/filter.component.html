@@ -1,0 +1,29 @@
+<div class="filter-container-desktop">
+  <div style="padding: 20px;">
+    <div style="font-weight: bold;">Filters</div>
+    <div class="custom-slider">
+      <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+      <button class="filter-btns" (click)="applyFilter()">Apply</button>
+      <button class="filter-btns" (click)="resetFilter()">Reset</button>
+    </div>
+  </div>
+</div>
+
+<div class="filter-container-mobile">
+  <div (click)=showFilterPopup()>Filter</div>
+</div>
+
+<div class="filter-popup-container" [ngClass]="{'active': showPopup}">
+  <div class="filter-popup">
+    <div style="font-weight: bold; font-size: 16px; border-bottom: solid 1px gray;">Filter Options</div>
+    <div class="custom-slider">
+      <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+      <button class="filter-btns" (click)="applyFilter()">Apply</button>
+      <button class="filter-btns" (click)="resetFilter()">Reset</button>
+    </div>
+  </div>
+</div>

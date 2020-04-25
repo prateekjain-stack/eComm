@@ -1,0 +1,32 @@
+.header{
+    display: flex;
+    height: 50px;
+    background: #4269ea;
+    align-items: center;
+}
+
+.header div{
+    height: 25px; 
+    width: 25px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.header div img{
+    width: 100%;
+}
+
+.header div.cart-item-number{
+    position: absolute;
+    background: red;
+    color: white;
+    top: 0;
+    right: -5px;
+    margin: 0;
+    height: 10px;
+    width: 10px;
+    font-size: 10px;
+    text-align: center;
+    padding: 2px;
+    border-radius: 50%;
+}
